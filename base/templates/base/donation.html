@@ -1,0 +1,25 @@
+{% extends 'base/main.html' %} {% load static %} {% block content %}
+
+<div style="display: flex; justify-content: center;" class="card">
+
+    <div style="width: 300px;" class="card my-3">
+        <div class="card--body">
+            <p> If i helped you in any way consider buying me a coffee </p>
+            <div id="paypal-button-container"></div>
+        </div>
+    </div>
+</div>
+
+<script src="https://www.paypal.com/sdk/js?client-id=test&currency=USD"></script>
+<script>
+    paypal.Buttons({
+        style: {
+            color: 'blue',
+            shape: 'pill',
+            label: 'pay',
+            height: '40'
+        }
+    }).render('#paypal-button-container');
+</script>
+
+{% endblock content %}

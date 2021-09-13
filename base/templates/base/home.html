@@ -1,0 +1,143 @@
+{% extends 'base/main.html' %} {% load static %} {% block content %}
+
+
+
+<section class="hero">
+    <div class="hero--content">
+
+        <div class="hero--content--intro">
+            <img id="profile_pic" src="{% static 'images/nathi.jpg' %}">
+            <h1 class="intro--name">Fabrone <br>BITITI</h1>
+        </div>
+
+        <div class="hero--content--subsection">
+            <h3 class="description">Full stack Developer 😊</h3>
+            <p class="slogan">I TEACH PEOPLE HOW TO CODE & ENGLISH </p>
+        </div>
+
+
+    </div>
+
+
+</section>
+
+<section class="section--2">
+    <h3>MY PROJECTS</h3>
+    <h5>Over here you can find how i spend my days as a 😊Developer</h5>
+    <div class="projects--wrapper">
+        {% for project in projects %}
+        <div class="project--column">
+            <a href="{% url 'project' project.id %}">
+                <!-- <img class="project-thumbnail" src="{% static 'images/nathi.jpg' %}" >  -->
+                <img class="project-thumbnail" src="{{project.thumbnail.url}}">
+            </a>
+            <div class="project--body">
+                <h5>{{project.title}} </h5>
+            </div>
+        </div>
+        {% empty %}
+        <h3> There are no project in the Database </h3>
+        {% endfor %}
+    </div>
+
+    <div class="about--wrapper">
+        <h3>More About Me</h3>
+
+        <p>Curious which components explicitly require jQuery, our JS, and Popper.js? Click the show components link below.
+
+        </p>
+        <p>If you aren’t satisfied with the build tool and configuration choices, you can eject at any time. This command will remove the single build dependency from your projectIf you aren’t satisfied with the build tool and configuration choices, you
+            can eject at any time. This command will remove the single build dependency from your projectIf you aren’t satisfied with the build tool and configuration choices, you can eject at any time. This command will remove the single build dependency
+            from your project</p>
+    </div>
+
+
+</section>
+
+<section class="section--1">
+    <div class="skill--container">
+        <h3>MY SKILLS</h3>
+
+        {% for skill in detailedSkills %}
+        <div class="skill--wrapper">
+
+            {% if skill.logo %}
+            <img class="skill--logo" src="{{skill.logo.url}}"> {% endif %}
+
+            <div>
+                <h5>{{skill.title}}</h5>
+                <p>{{skill.body}}</p>
+            </div>
+
+
+        </div>
+        {% empty %}
+        <h5>there are no skills in database</h5>
+        {% endfor %}
+
+
+        <h3>Other Skills</h3>
+        {% for skill in skills %}
+        <div class="other--skills--wrapper">
+            <div class="skill--tag">
+                <span>{{skill.title}}</span>
+            </div>
+
+
+        </div>
+        {% endfor %}
+
+    </div>
+
+
+</section>
+
+
+<section class="section--3">
+    <div class="skill--container">
+
+        <h3>Endoresments</h3>
+
+        <a class="btn btn-primary" href="{% url 'add-endoresment' %}">
+            Add Endoresment
+        </a> {% for i in endoresments %}
+        <div style="margin-bottom: 1em; margin-top: 1em;" class="card">
+
+            <div class="card-body">
+                <h5>{{i.name}}</h5>
+                <p>{{i.body}}</p>
+            </div>
+
+        </div>
+        {% endfor %}
+
+
+
+
+    </div>
+
+
+</section>
+
+
+<section class="section--1">
+    <div class="container">
+        <form class="contact--form" method="POST">
+            {% csrf_token %} {% for field in form %}
+            <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label"> {{field.label}} </label> {{field}}
+            </div>
+
+            {% endfor %}
+
+            <input class="btn btn-primary" type="submit" value="submit">
+        </form>
+    </div>
+
+
+</section>
+
+
+
+
+{% endblock content %}

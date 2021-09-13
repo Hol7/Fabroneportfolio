@@ -1,0 +1,238 @@
+body {}
+
+.navigation-bar {
+    background: rgb(241, 23, 18);
+    background: linear-gradient(90deg, rgba(241, 23, 18, 1) 7%, rgba(24, 48, 68, 1) 57%, rgba(0, 153, 247, 1) 93%);
+    height: 50px;
+    display: flex;
+    justify-content: center;
+}
+
+.nav-link {
+    color: rgb(255, 255, 255);
+}
+
+.hero {
+    background: rgb(241, 23, 18);
+    background: linear-gradient(90deg, rgba(241, 23, 18, 1) 7%, rgba(24, 48, 68, 1) 57%, rgba(0, 153, 247, 1) 93%);
+    height: 70vh;
+    color: rgb(0, 0, 0);
+}
+
+#profile_pic {
+    height: 200px;
+    width: 200px;
+    object-fit: cover;
+    border-radius: 10%;
+    box-shadow: rgb(59, 140, 245);
+}
+
+.hero--content {
+    justify-content: center;
+    margin: 0 auto;
+    width: 800px;
+}
+
+.hero--content--intro {
+    display: flex;
+    color: #fff;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
+}
+
+.intro--name {
+    color: rgb(1, 39, 90);
+    font-size: 80px;
+    letter-spacing: .1em;
+    font-weight: 900px;
+    line-height: 1em;
+    background: linear-gradient(45deg, #ba8b02, #181818);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -moz-text-fill-color: transparent;
+    -webkit-text-fill-color: transparent;
+    display: inline-block
+}
+
+.hero--content--subsection {
+    text-align: center;
+    color: #fff;
+}
+
+.description {
+    font-weight: bold;
+    font-size: 50px;
+    text-align: center;
+}
+
+.slogan {
+    font-weight: bold;
+    font-size: 22px;
+    text-align: center;
+}
+
+.projects--wrapper {
+    display: flex;
+    flex-flow: row;
+    gap: 2em;
+    margin-top: 2em;
+    margin-top: 2em;
+    color: #fff;
+    overflow-x: auto;
+}
+
+.projects--wrapper::-webkit-scrollbar {
+    width: 1px;
+}
+
+.projects--wrapper::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.3);
+}
+
+.projects--wrapper::-webkit-scrollbar-thumb {
+    background: rgb(241, 23, 18);
+    background: linear-gradient(90deg, rgba(241, 23, 18, 1) 7%, rgba(24, 48, 68, 1) 57%, rgba(0, 153, 247, 1) 93%);
+    outline: 1px solid slategray;
+    border-radius: 100px;
+}
+
+.projects--wrapper::-webkit-scrollbar-thumb:hover {
+    background: rgb(241, 23, 18);
+    background: linear-gradient(90deg, rgba(241, 23, 18, 1) 7%, rgba(24, 48, 68, 1) 57%, rgba(0, 153, 247, 1) 93%);
+}
+
+.project-thumbnail {
+    width: 100%;
+    color: #fff;
+    height: 200px;
+    object-fit: cover;
+}
+
+.project--column {
+    color: white;
+    min-width: 300px;
+    max-height: object-fit;
+}
+
+.project--body {
+    background-color: #fff;
+    padding: 1em;
+    color: black;
+}
+
+.skill--container {
+    width: 600px;
+    margin: 0 auto;
+}
+
+.skill--wrapper {
+    margin-top: 2em;
+    margin-bottom: 2em;
+    display: flex;
+    gap: 1em;
+    align-items: center;
+}
+
+.skill--logo {
+    height: 60px;
+    width: 60px;
+}
+
+.other--skills--wrapper {
+    display: inline-block;
+    flex-wrap: wrap;
+    gap: 1em;
+}
+
+.skill--tag {
+    background-color: #c4e7f2;
+    width: fit-content;
+    padding: 5px 20px;
+    margin: 4px;
+    border-radius: 20px;
+}
+
+.project--image {
+    max-width: 800px;
+}
+
+.contact--form {
+    display: block;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.project--pktitle {}
+
+.project--pkbody {}
+
+.section--1 {
+    background-color: #fff;
+    padding-top: 2em;
+    padding-bottom: 2em;
+}
+
+.section--2 {
+    background-color: #0099f7;
+    padding-top: 1em;
+    padding-bottom: 2em;
+    padding: 20px;
+    color: #fff;
+}
+
+.section--3 {
+    background: rgb(241, 23, 18);
+    background: linear-gradient(90deg, rgba(241, 23, 18, 1) 7%, rgba(24, 48, 68, 1) 57%, rgba(0, 153, 247, 1) 93%);
+    padding-top: 2em;
+    padding-bottom: 2em;
+    padding: 20px;
+    color: #fff;
+}
+
+.about--wrapper {
+    background-color: #0099f7;
+    padding-top: 2em;
+    padding-bottom: 2em;
+    color: rgb(252, 252, 252);
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+}
+
+@media (max-width:800px) {
+    .hero--content--intro {
+        flex-direction: column;
+        justify-content: center;
+    }
+    .projects--wrapper {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width:800px) {
+    .skill--container {
+        width: 100%;
+    }
+}
+
+@media (max-width:800px) {
+    .hero--content {
+        width: 100%;
+    }
+}
+
+@media (max-width:600px) {
+    .skills--container {
+        width: 100%;
+    }
+    .skills--wrapper {
+        flex-flow: column;
+    }
+}
+
+@media (max-width:400px) {
+    .skills--wrapper {
+        flex-flow: column;
+    }
+}

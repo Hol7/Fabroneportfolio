@@ -1,0 +1,1 @@
+web: gunicorn fabroneportfolio.wsgi --log-file -

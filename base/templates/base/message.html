@@ -1,0 +1,11 @@
+{% extends 'base/main.html' %}
+{% load static %}
+{% block content %}
+
+<div class="container">
+    <p> Sender: {{message.name}}</p>
+    <p> Email: {{message.email}}</p>
+    <hr>
+    <p>{{message.body}}</p>
+</div>
+{% endblock content %}
